@@ -1,0 +1,26 @@
+{
+  "name": "payumoneyweb",
+  "version": "1.0.0",
+  "description": "no",
+  "main": "payumoneyweb.js",
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "no"
+  },
+  "keywords": [
+    "no"
+  ],
+  "author": "devp",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "js-sha512": "^0.3.0",
+    "morgan": "^1.8.2",
+    "serve-favicon": "^2.4.3"
+  }
+}
