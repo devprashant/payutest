@@ -65,7 +65,8 @@ and open the template in the editor.
 			formBody.push(encodedKey + "=" + encodedValue);
 		}
 		formBody = formBody.join("&");
-		fetch("http://localhost:8080/ppum", {
+		// fetch("http://localhost:8080/ppum", {
+		fetch("https://www.datapacks.in/ppum", {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'					
