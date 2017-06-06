@@ -9,8 +9,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sha512 = require('js-sha512').sha512;
 
-var FormData = require('form-data');
-
 var sslPath = '/home/testload/.cert/';
 
 var options = {  
