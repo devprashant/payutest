@@ -10,7 +10,7 @@ and open the template in the editor.
 </head>
 <body>
 <h1>PayUMoney Payment Request Form </h1>
-<form action="ppum"  name="payuform" method=POST " id="payuform">
+<form action="https://test.payu.in/_payment"  name="payuform" method=POST " id="payuform">
 <input  name="key" value="6Ii6HSL7" />
 <input  name="hash" id="hash" />
 <input  name="txnid" value="txnid001"/>
@@ -50,7 +50,7 @@ and open the template in the editor.
 <td colspan="3"><input name="service_provider" value="payu_paisa" /></td>
 </tr>
 <tr>	
-<td colspan="4"><input type="submit" value="submit" <!-- onClick="submitForm()" --> /></td>
+<td colspan="4"><input type="button" value="submit" onClick="submitForm()" /></td>
 </tr>
 
 </table>
@@ -61,7 +61,7 @@ and open the template in the editor.
 		fetch('https://www.datapacks.in/ppum', {
 			method: 'post',
 			headers:{
-				"Content-type": "application/x-www-form-urlencoded; charset=UTF-8" 
+				'Content-Type': 'multipart/form-data'
 			},
 			body: form
 		})
