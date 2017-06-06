@@ -75,7 +75,7 @@ and open the template in the editor.
 		})
 		.then(res => res.json())
 		.then(data => {
-			document.getElementById('hash') = data.hash;
+			document.getElementById('hash').value = data.hash;
 			document.getElementById('payuform').submit();
 		});
 
