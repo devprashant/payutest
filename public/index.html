@@ -57,13 +57,16 @@ and open the template in the editor.
 </form>
 <script>
 	function submitForm(){
-		var form = new FormData(document.getElementById('payuform'));
+		// var form = new FormData(document.getElementById('payuform'));
+		var form = new FormData();
+		form.append('name', 'testprofile');
+		form.append('testsdf', 'profilehello');
 		fetch('https://www.datapacks.in/ppum', {
 			method: 'post',
 			headers:{
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
-			body: 'lorem=ipsum&name=binny'
+			body: form
 		})
 		.then(res => res.json())
 		.then(data => {
