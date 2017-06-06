@@ -10,9 +10,9 @@ and open the template in the editor.
 </head>
 <body>
 <h1>PayUMoney Payment Request Form </h1>
-<form action="https://test.payu.in/_payment"  name="payuform" method=POST " id="payuform">
+<form action="ppum"  name="payuform" method=POST " id="payuform">
 <input  name="key" value="6Ii6HSL7" />
-<input  name="hash" id="hash" />
+<input  name="hash" id="hash" value="4b808a8d22b5f0c819362c4262591ae618ffd53ea1ce75eb3106ca14fd1416de24bf11a8593dc349b9d7eec172c43359392a464a2d2c44c4ba452b446299c739"/>
 <input  name="txnid" value="txnid001"/>
 <table>
 <tr>
@@ -50,7 +50,7 @@ and open the template in the editor.
 <td colspan="3"><input name="service_provider" value="payu_paisa" /></td>
 </tr>
 <tr>	
-<td colspan="4"><input type="button" value="submit" onClick="submitForm()" /></td>
+<td colspan="4"><input type="button" value="submit" <!-- onClick="submitForm() -->" /></td>
 </tr>
 
 </table>
@@ -61,14 +61,14 @@ and open the template in the editor.
 		fetch('https://www.datapacks.in/ppum', {
 			method: 'post',
 			headers:{
-				'Content-Type': 'multipart/form-data'
+				'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			body: form
 		})
 		.then(res => res.json())
 		.then(data => {
 			console.log(data.hash);
-			document.getElementById('hash').value=data.hash;
+			// document.getElementById('hash').value=data.hash;
 			document.getElementById('payuform').submit();
 		})
 		.catch(err => console.log(err));
