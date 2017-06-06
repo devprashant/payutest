@@ -9,14 +9,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sha512 = require('js-sha512').sha512;
 
-// var FormData = require('form-data');
+var FormData = require('form-data');
 
-// var sslPath = '/home/testload/.cert/';
+var sslPath = '/home/testload/.cert/';
 
-// var options = {  
-//     key: fs.readFileSync(sslPath + 'privkey1.pem'),
-//     cert: fs.readFileSync(sslPath + 'fullchain1.pem')
-// };
+var options = {  
+    key: fs.readFileSync(sslPath + 'privkey1.pem'),
+    cert: fs.readFileSync(sslPath + 'fullchain1.pem')
+};
 
 var app = express();
 
@@ -42,7 +42,7 @@ app.use('/success', (req, res) => {
 	res.send('success');
 })
 var httpServer = http.createServer(app);
-// var httpsServer = https.createServer(options, app);
+var httpsServer = https.createServer(options, app);
 
 httpServer.listen(8080);
-// httpsServer.listen(8443);
+httpsServer.listen(8443);

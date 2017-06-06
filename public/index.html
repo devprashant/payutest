@@ -39,11 +39,11 @@ and open the template in the editor.
 </tr>
 <tr>
 <td>Success URI: </td>
-<td colspan="3"><input name="surl"  size="64" value="http://www.datapacks.in/success" /> </td>
+<td colspan="3"><input name="surl"  size="64" value="https://www.datapacks.in/success" /> </td>
 </tr>
 <tr>
 <td>Failure URI: </td>
-<td colspan="3"><input name="furl"  size="64" value="http://www.datapacks.in/failed/"></td>
+<td colspan="3"><input name="furl"  size="64" value="https://www.datapacks.in/failed/"></td>
 </tr>
 <tr>
 <td colspan="3"><input type="hidden" name="service_provider" value="payu_paisa" /></td>
@@ -100,7 +100,7 @@ and open the template in the editor.
 <script>
 	function submitForm(){
 		var form = new FormData(document.getElementById('payuform'));
-		fetch('http://localhost:8080/ppum', {
+		fetch('https://www.datapacks.in/ppum', {
 			method: 'post',
 			body: form
 		})
