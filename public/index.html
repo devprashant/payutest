@@ -12,7 +12,7 @@ and open the template in the editor.
 <h1>PayUMoney Payment Request Form </h1>
 <form action="https://test.payu.in/_payment"  name="payuform" method=POST " id="payuform">
 <input  name="key" value="6Ii6HSL7" />
-<input  name="hash" id="hash" value="4b808a8d22b5f0c819362c4262591ae618ffd53ea1ce75eb3106ca14fd1416de24bf11a8593dc349b9d7eec172c43359392a464a2d2c44c4ba452b446299c739"/>
+<input  name="hash" id="hash" value=""/>
 <input  name="txnid" value="txnid001"/>
 <table>
 <tr>
@@ -57,26 +57,25 @@ and open the template in the editor.
 </form>
 <script>
 	function submitForm(){
-		// var form = new FormData(document.getElementById('payuform'));
-		var form = new FormData();
-		form.append('name', 'testprofile');
-		form.append('testsdf', 'profilehello');
-		fetch('https://www.datapacks.in/ppum', {
-			method: 'post',
-			headers:{
-				'Content-Type': 'application/x-www-form-urlencoded'
+		var form = new FormData(document.getElementById("payuform"));
+		var formBody = [];
+		for ( var key of form.keys()){
+			var encodedKey = encodeURIComponent(key);
+			var encodedValue = encodeURIComponent(form.get(key));
+			formBody.push(encodedKey + "=" + encodedValue);
+		}
+		formBody = formBody.join("&");
+		fetch("http://localhost:8080/ppum", {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'					
 			},
-			body: form
+			body: formBody
 		})
 		.then(res => res.json())
-		.then(data => {
-			console.log(data.hash);
-			// document.getElementById('hash').value=data.hash;
-			document.getElementById('payuform').submit();
-		})
-		.catch(err => console.log(err));
-		
-	}
+		.then(data => console.log(data));
+
+	}	
 </script>
 </body>
 </html>
