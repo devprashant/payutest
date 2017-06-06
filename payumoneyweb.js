@@ -30,7 +30,15 @@ app.use('/ppum', (req, res) => {
 	// var udf = '';
 	var { udf, key, txnid, amount, productinfo, firstname, email } = req.body;
 	console.log(JSON.stringify(req.body));
-	var hashSequence = `${key}|${txnid}|${amount}|${productinfo}|${firstname}|${email}|${udf}||||||||||${salt}` 
+	var hashSequence = key 
+					  + '|' + txnid
+					  + '|' + amount
+					  + '|' + productinfo
+					  + '|' + firstname
+					  + '|' + email
+					  + '|' + udf
+					  + '|||||||||'
+					  + '|' + salt; 
 	var hash = sha512(hashSequence);
 	// res.send(`hash is ${hash}`);
 	res.json({hash});
