@@ -12,7 +12,6 @@ and open the template in the editor.
 <h1>PayUMoney Payment Request Form </h1>
 <form action="https://test.payu.in/_payment"  name="payuform" method=POST " id="payuform">
 <input  name="key" value="6Ii6HSL7" />
-<input  name="hash_string" value="" />
 <input  name="hash" id="hash" />
 <input  name="txnid" value="txnid001"/>
 <input  name="udf"  value="" />
@@ -37,6 +36,10 @@ and open the template in the editor.
 <td colspan="3"><textarea name="productinfo" >findmee service</textarea></td>
 </tr>
 <tr>
+<td>udf</td>
+<td colspan="3"><textarea name="udf" ></textarea></td>
+</tr>
+<tr>
 <td>Success URI: </td>
 <td colspan="3"><input name="surl"  size="64" value="https://www.datapacks.in/success" /> </td>
 </tr>
@@ -45,7 +48,7 @@ and open the template in the editor.
 <td colspan="3"><input name="furl"  size="64" value="https://www.datapacks.in/failed/"></td>
 </tr>
 <tr>
-<td colspan="3"><input type="hidden" name="service_provider" value="payu_paisa" /></td>
+<td colspan="3"><input name="service_provider" value="payu_paisa" /></td>
 </tr>
 <tr>	
 <td colspan="4"><input type="button" value="submit" onClick="submitForm()" /></td>

@@ -27,8 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/ppum', (req, res) => {
 	var salt = 'YH0RwzBavo';
-	var udf = '';
-	var { key, txnid, amount, productinfo, firstname, email } = req.body;
+	// var udf = '';
+	var { udf, key, txnid, amount, productinfo, firstname, email } = req.body;
 	console.log(JSON.stringify(req.body));
 	var hashSequence = `${key}|${txnid}|${amount}|${productinfo}|${firstname}|${email}|${udf}|${salt}` 
 	var hash = sha512(hashSequence);
